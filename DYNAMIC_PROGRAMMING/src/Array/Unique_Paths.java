@@ -1,4 +1,4 @@
-package ARRAY;
+package Array;
 
 public class Unique_Paths {
 

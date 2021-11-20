@@ -1,4 +1,4 @@
-package STRING;
+package String;
 
 public class Palindrome_Partitioning_II {
 

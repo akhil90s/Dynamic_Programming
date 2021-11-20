@@ -1,5 +1,4 @@
-package ARRAY;
-
+package Array;
 
 public class Maximum_Subarray {
 
@@ -12,7 +11,9 @@ public class Maximum_Subarray {
 
 		int[] result = maximumSubArray_ReturnArray(array);
 		printArray(result);
+		
 	}
+		
 
 	public static int maximumSubArray_ReturnSum(int[] array) {
 		int maxSumArray = array[0];
@@ -26,7 +27,7 @@ public class Maximum_Subarray {
 			if (maxEndingHere < 0) {
 				maxEndingHere = 0;
 			}
-
+			
 		}
 		return maxSumArray;
 	}

@@ -1,4 +1,4 @@
-package STRING;
+package String;
 
 public class Count_All_Palindromic_Substrings {
 

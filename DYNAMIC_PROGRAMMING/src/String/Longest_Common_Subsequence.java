@@ -1,4 +1,4 @@
-package ARRAY;
+package String;
 
 public class Longest_Common_Subsequence {
 
@@ -22,7 +22,6 @@ public class Longest_Common_Subsequence {
                 } else {
                     dp[i][j] = Math.max(dp[i + 1][j], dp[i][j + 1]);
                 }
-                
             }
         }
 

@@ -1,23 +1,29 @@
-package STRING;
+package String;
 
-public class Length_Of_Longest_Palindromic_Substring {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Get_All_Palindromic_Substrings {
 
     public static void main(String[] args) {
 
-        int result = lengthOfPalindromicSubstring("abccbc");
+        
+        List<String> result = getAllPalindromicSubstring("abccbc");
         System.out.println(result);
 
     }
 
-    private static int lengthOfPalindromicSubstring(String s) {
+    private static List<String> getAllPalindromicSubstring(String s) {
 
         boolean[][] dp = new boolean[s.length()][s.length()];
-        int result = 0;
+
+        List<String> result = new ArrayList<>();
 
         for (int g = 0; g < dp.length; g++) {
+
             for (int i = 0, j = g; j < dp.length; i++, j++) {
 
-                if (i == j) {
+                if (g == 0) {
                     dp[i][j] = true;
                 } else if (g == 1 && s.charAt(i) == s.charAt(j)) {
                     dp[i][j] = true;
@@ -25,10 +31,9 @@ public class Length_Of_Longest_Palindromic_Substring {
                     dp[i][j] = true;
                 }
 
-                if (dp[i][j] == true) {
-                    result = g + 1;
+                if (dp[i][j]) {
+                    result.add(s.substring(i, j + 1));
                 }
-
             }
         }
 
