@@ -35,17 +35,15 @@ public class Partition_Equal_Subset_Sum {
         return canPartition_DP(nums, 0, 0, totalSum, new HashMap<String, Boolean>());
 
     }
-
+    // Recursive
     public static boolean canPartition_BackTracking(int[] nums, int index, int sum, int total) {
 
         if (sum * 2 == total) {
             return true;
         }
-
         if (index >= nums.length || sum * 2 > total) {
             return false;
         }
-
         return canPartition_BackTracking(nums, index + 1, sum + nums[index], total)
                 || canPartition_BackTracking(nums, index + 1, sum, total);
     }
@@ -54,24 +52,20 @@ public class Partition_Equal_Subset_Sum {
     public static boolean canPartition_DP(int[] nums, int index, int sum, int total, Map<String, Boolean> map) {
 
         String state = index + "" + sum;
-
         if (map.containsKey(state)) {
             return false;
         }
-
         if (sum * 2 > total || index >= nums.length) {
             return false;
         }
-
         if (sum * 2 == total) {
             return true;
         }
-
+        
         boolean foundPartition = canPartition_DP(nums, index + 1, sum + nums[index], total, map)
                 || canPartition_DP(nums, index + 1, sum, total, map);
-
         map.put(state, foundPartition);
-
+        
         return foundPartition;
     }
 
