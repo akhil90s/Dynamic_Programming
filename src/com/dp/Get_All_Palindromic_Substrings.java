@@ -20,9 +20,7 @@ public class Get_All_Palindromic_Substrings {
         List<String> result = new ArrayList<>();
 
         for (int g = 0; g < dp.length; g++) {
-
             for (int i = 0, j = g; j < dp.length; i++, j++) {
-
                 if (g == 0) {
                     dp[i][j] = true;
                 } else if (g == 1 && s.charAt(i) == s.charAt(j)) {
