@@ -50,6 +50,7 @@ public class Partition_Equal_Subset_Sum {
                 || canPartition_BackTracking(nums, index + 1, sum, total);
     }
 
+    // Recursive + Memoization
     public static boolean canPartition_DP(int[] nums, int index, int sum, int total, Map<String, Boolean> map) {
 
         String state = index + "" + sum;

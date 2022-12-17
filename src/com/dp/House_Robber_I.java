@@ -51,7 +51,7 @@ public class House_Robber_I {
 		return Math.max(stealCurrent, skipCurrent);
 	}
 
-	// Recursion
+	// Recursion + Memoization
 	public static int rob_Approach3(int[] nums) {
 		dp = new Integer[nums.length];
 		return helperMethod_Approach3(nums, 0);

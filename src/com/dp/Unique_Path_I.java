@@ -1,6 +1,6 @@
 package com.dp;
 
-public class Unique_Paths {
+public class Unique_Path_I {
 
 	public static void main(String[] args) {
 
