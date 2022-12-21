@@ -5,22 +5,34 @@ public class Best_Time_To_Buy_And_Sell_Stock_II {
 	public static void main(String[] args) {
 
 		int[] array = new int[] { 7, 1, 5, 3, 6, 4 };
-		int result = maxProfit(array);
-		System.out.println(result);
-		
+		int result_Approach1 = maxProfit_Approach1(array);
+		System.out.println(result_Approach1);
+
 	}
 
-	public static int maxProfit(int[] prices) {
-
+	public static int maxProfit_Approach1(int[] prices) {
 		if (prices.length == 0)
 			return 0;
+		Integer[][] dp = new Integer[prices.length][2];
+		return helperMethod_Approach1(prices, 0, 1, dp);
+
+	}
+
+	private static int helperMethod_Approach1(int[] prices, int index, int buy, Integer[][] dp) {
+
+		if (index == prices.length)
+			return 0;
+		if (dp[index][buy] != null)
+			return dp[index][buy];
 		int profit = 0;
-		for (int i = 0; i < prices.length - 1; i++) {
-			if (prices[i + 1] > prices[i]) {
-				profit += prices[i + 1] - prices[i];
-			}
+		if (buy == 1) {
+			profit = Math.max(-prices[index] + helperMethod_Approach1(prices, index + 1, 0, dp),
+					0 + helperMethod_Approach1(prices, index + 1, 1, dp));
+		} else {
+			profit = Math.max(prices[index] + helperMethod_Approach1(prices, index + 1, 1, dp),
+					0 + helperMethod_Approach1(prices, index + 1, 0, dp));
 		}
-		return profit;
+		return dp[index][buy] = profit;
 	}
 
 }
