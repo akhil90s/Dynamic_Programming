@@ -18,6 +18,8 @@ public class Best_Time_To_Buy_And_Sell_Stock_II {
 
 	}
 
+	// Recursive + Memoization
+	// buy = 1 we can buy a stock; buy = 0 we can't buy a stock as we are holding one
 	private static int helperMethod_Approach1(int[] prices, int index, int buy, Integer[][] dp) {
 
 		if (index == prices.length)
