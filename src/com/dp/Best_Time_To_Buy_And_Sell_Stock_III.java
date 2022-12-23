@@ -10,14 +10,15 @@ public class Best_Time_To_Buy_And_Sell_Stock_III {
 
 	}
 
+	// Recursive + Memoization
+	// buy = 1 we can buy a stock; buy = 0 we can't buy a stock as we are holding one; k = 2 limited number of transactions	
 	public static int maxProfit_Approach1(int[] prices) {
 		if (prices.length == 0)
 			return 0;
 		int[][][] dp = new int[prices.length][2][3];
 		return helperMethod_Approach1(prices, 0, 1, dp, 2);
 	}
-	// Recursive + Memoization
-	// buy = 1 we can buy a stock; buy = 0 we can't buy a stock as we are holding one; k limited number of transactions
+	
 	private static int helperMethod_Approach1(int[] prices, int index, int buy, int[][][] dp, int k) {
 
 		if (index == prices.length)

@@ -5,7 +5,7 @@ public class Best_Time_To_Buy_And_Sell_Stock_With_CoolDown {
 	public static void main(String[] args) {
 
 		int[] array = new int[] { 1, 2, 3, 0, 2 };
-		int result = maxProfit(array);
+		int result = maxProfit_Tabulation(array);
 		System.out.println(result);
 
 	}
@@ -25,7 +25,7 @@ public class Best_Time_To_Buy_And_Sell_Stock_With_CoolDown {
           dp[i - 1][0]    
     */
 	
-	public static int maxProfit(int[] prices) {
+	public static int maxProfit_Tabulation(int[] prices) {
 
 		int n = prices.length;
 		if (n <= 1)

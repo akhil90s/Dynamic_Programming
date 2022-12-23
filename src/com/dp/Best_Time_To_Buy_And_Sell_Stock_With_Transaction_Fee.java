@@ -5,12 +5,12 @@ public class Best_Time_To_Buy_And_Sell_Stock_With_Transaction_Fee {
 	public static void main(String[] args) {
 
 		int[] array = new int[] { 1, 3, 2, 8, 4, 9 };
-		int result = maxProfit(array, 2);
-		System.out.println(result);
+		int result_Tabulation = maxProfit_Tabulation(array, 2);
+		System.out.println(result_Tabulation);
 
 	}
 
-	public static int maxProfit(int[] prices, int fee) {
+	public static int maxProfit_Tabulation(int[] prices, int fee) {
 
 		int n = prices.length;
 		if (n <= 1)
