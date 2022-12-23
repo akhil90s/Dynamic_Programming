@@ -24,13 +24,11 @@ public class House_Robber_II {
 	public static int robHelper(int[] nums, int start, int end) {
 
 		int max = 0, prevOne = 0, prevTwo = 0;
-
 		for (int i = start; i < end; i++) {
 			max = Math.max(prevTwo + nums[i], prevOne);
 			prevTwo = prevOne;
 			prevOne = max;
 		}
-
 		return max;
 	}
 
